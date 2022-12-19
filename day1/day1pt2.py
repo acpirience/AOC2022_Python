@@ -3,28 +3,34 @@ from loguru import logger
 
 def main():
     """
-    https://adventofcode.com/2021/day/1#part2
+    https://adventofcode.com/2022/day/1
     """
     day = "1"
     part = "2"
 
     logger.info(f"Day {day} part {part}")
+    #fileInputName = "day" + day + "exampleinput.txt"
+    fileInputName = "day" + day + "input.txt"
+
     # load input
-    increased = 0
-    with open("day" + day + "\\day" + day + "input.txt", "r") as inputFile:
-        lines = inputFile.readlines()
-        lines = [int(line) for line in lines]
-        max_lines = len(lines)
-        prev_window = sum(lines[0:3])
+    result = ""
+    logger.info(f"Working with file: {fileInputName}")
 
-        for i in range(1, max_lines - 2):
-            window = sum(lines[i : i + 3])
-            if window > prev_window:
-                increased += 1
+    elvesCalories = [0]
 
-            prev_window = window
+    with open(fileInputName, "r") as inputFile:
+        curIdx = 0
+        for line in inputFile.readlines():
+            if line.strip():
+                elvesCalories[curIdx] += int(line)
+            else:
+                curIdx += 1
+                elvesCalories.append(0)
 
-    logger.info(f"Day {day} part {part} result: {increased}")
+    elvesCalories.sort(reverse=True)
+    result = sum(elvesCalories[0:3])
+
+    logger.info(f"Day {day} part {part} result: {result}")
 
 
 if __name__ == "__main__":
