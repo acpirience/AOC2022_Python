@@ -9,7 +9,7 @@ def main():
     part = "2"
 
     logger.info(f"Day {day} part {part}")
-    #fileInputName = "day" + day + "exampleinput.txt"
+    # fileInputName = "day" + day + "exampleinput.txt"
     fileInputName = "day" + day + "input.txt"
 
     # load input
