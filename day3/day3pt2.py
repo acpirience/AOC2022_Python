@@ -21,7 +21,6 @@ def main():
     fileInputName = "day" + day + "input.txt"
 
     # load input
-    result = ""
     logger.info(f"Working with file: {fileInputName}")
 
     result = 0
