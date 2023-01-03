@@ -24,7 +24,7 @@ def calcPlay(opponent, outcome):
 
 def main():
     """
-    https://adventofcode.com/2022/day/1
+    https://adventofcode.com/2022/day/2
     """
     day = "2"
     part = "2"
